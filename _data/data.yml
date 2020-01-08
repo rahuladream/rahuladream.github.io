@@ -7,41 +7,41 @@ sidebar:
     education: True # set to False if you want education in main section instead of in sidebar
 
     # Profile information
-    name: Alan Doe
-    tagline: Full Stack Developer
-    avatar: profile.png  #place a 100x100 picture inside /assets/images/ folder and provide the name of the file below
+    name: Rahul Singh
+    tagline: Full Stack Python Engineer | Machine Learning Novice
+    avatar: profile.jpeg  #place a 100x100 picture inside /assets/images/ folder and provide the name of the file below
 
     # Sidebar links
-    email: hello@webjeda.com
-    phone: 012 345 6789
-    website: blog.webjeda.com #do not add http://
-    linkedin: alandoe
-    github: sharu725
-    gitlab:
-    bitbucket:
-    twitter: '@webjeda'
-    stack-overflow: # Number/Username, e.g. 123456/alandoe
-    codewars:
+    email: rahul.singh4800@gmail.com
+    phone: 9695100143
+    website: stacklegacy.com/blog #do not add http://
+    linkedin: rahuladream
+    github: rahuladream
+    gitlab: rahuladream
+    bitbucket: rahuladream
+    twitter: '@rahuladream'
+    stack-overflow: rahuladream # Number/Username, e.g. 123456/alandoe
+    codewars: 
     goodreads: # Number-Username, e.g. 123456-alandoe
 
     languages:
-      - idiom: English
+      - idiom: Hindi
         level: Native
 
-      - idiom: French
+      - idiom: English
         level: Professional
 
       - idiom: Spanish
-        level: Professional
+        level: Novice
 
     interests:
-      - item: Climbing
+      - item: Gaming
         link:
 
-      - item: Snowboarding
+      - item: Devlopment
         link:
 
-      - item: Cooking
+      - item: Managment
         link:
 
 career-profile:
@@ -168,22 +168,22 @@ skills:
 
     toolset:
       - name: Python & Django
-        level: 98%
+        level: 88%
 
-      - name: Javascript & jQuery
-        level: 98%
-
-      - name: Angular
-        level: 98%
-
-      - name: HTML5 & CSS
-        level: 95%
-
-      - name: Ruby on Rails
-        level: 85%
-
-      - name: Sketch & Photoshop
+      - name: Javascript & ReactJS
         level: 60%
 
+      - name: Tensorflow
+        level: 67%
+
+      - name: Data Science Skills
+        level: 60%
+
+      - name: Ruby on Rails
+        level: 87%
+
+      - name: UI Designing
+        level: 89%
+
 footer: >
-    Designed with <i class="fas fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank" rel="nofollow">Xiaoying Riley</a>
+    Designed with <i class="fas fa-heart"></i>
