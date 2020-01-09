@@ -18,8 +18,6 @@ sidebar:
     linkedin: rahuladream
     github: rahuladream
     gitlab: rahuladream
-    bitbucket: rahuladream
-    twitter: '@rahuladream'
     stack-overflow: rahuladream # Number/Username, e.g. 123456/alandoe
     codewars: 
     goodreads: # Number-Username, e.g. 123456-alandoe
@@ -47,16 +45,13 @@ sidebar:
 career-profile:
     title: Career Profile
     summary: |
-      Summarise your career here lorem ipsum dolor sit amet, consectetuer
-      adipiscing elit. You can [download this free resume/CV template here]().
-      Aenean commodo ligula eget dolor aenean massa. Cum sociis natoque
-      penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-      Donec quam felis, ultricies nec, pellentesque eu.
-      Second paragraph if required.
+      Innovative Full Stack Developer with expertise in Back-End. Offering 1+ years of experience
+      in Full Software Devlopment Life-Cycle. Quick Learner and master in new technologies and working 
+      both team and self-directed settings.
 education:
-    - degree: MSc in Computer Science
-      university: University of London
-      time: 2011 - 2012
+    - degree: Computer Science & Engineering
+      university: Dr. APJ Kalam University
+      time: 2014 - 2018
       details: |
         Describe your study here lorem ipsum dolor sit amet, consectetuer
         adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
