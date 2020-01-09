@@ -1,7 +1,13 @@
 /* ======= Base ======= */
 @import url('https://fonts.googleapis.com/css?family=Space+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Cabin&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Inconsolata&display=swap');
+
+
 body {
-    font-family: 'Space Mon', monospace
+    font-family: 'Space Mono', monospace
     color: $text-color-secondary;
     background: $smoky-white;
     font-size: 14px;
