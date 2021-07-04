@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+
+  <!-- Torus Kit `.css` file -->
+  <link rel="stylesheet" href="./assets/css/style.min.css">
+
+  <!-- Torus Kit `.js` file -->
+  <script src="./assets/js/toruskit.min.js"></script>
+
+  <title>Pro - Beautiful Responsive Bootstrap 5 HTML Template</title>
+
+</head>
+
+<body class="">
+
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <!-- Navigation -->
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+  <nav class="navbar navbar-expand-lg fixed-top bg-white">
+    <div class="container">
+
+      <!-- Logo -->
+      <a class="navbar-brand" href="./">
+        <img src="./assets/img/logo.svg" alt="Logo">
+      </a>
+
+      <!-- Togglers -->
+      <div class="d-flex ms-auto order-lg-1">
+        <!-- Top navigation toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNavbar" aria-controls="topNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="bi bi-three-dots-vertical"></i>
+        </button>
+
+        <!-- Offscreen navigation toggler -->
+        <button class="btn shadow-no position-relative center-both text-dark" id="off-toggler" type="button" aria-expanded="false" aria-label="Toggle navigation" data-tor="click:class.toggle(active, {target: body})">
+          <!-- <i class="bi bi-list h4 mb-0 z-index-1 center-both"></i> -->
+          <i class="bi bi-arrow-left-short position-absolute d-flex" data-tor="hover(#off-toggler):reveal(left) delay(100ms) quad"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" data-tor-group="path => hover(#off-toggler):scaleX.to(0) originX(0%) quad delay(/+100ms/);">
+            <path fill="currentColor" d="M2.5 4c0-.3.2-.5.5-.5h10c.3 0 .5.2.5.5s-.2.5-.5.5H3c-.3 0-.5-.2-.5-.5z" />
+            <path fill="currentColor" d="M2.5 8c0-.3.2-.5.5-.5h10c.3 0 .5.2.5.5s-.2.5-.5.5H3c-.3 0-.5-.2-.5-.5z" />
+            <path fill="currentColor" d="M2.5 12c0-.3.2-.5.5-.5h10c.3 0 .5.2.5.5s-.2.5-.5.5H3c-.3 0-.5-.2-.5-.5z" />
+          </svg>
+          <span class="circle circle-md position-absolute bg-opacity-10" data-tor="hover(#off-toggler):[bg(dark) scale.from(0)]"></span>
+        </button>
+      </div>
+
+      <!-- Navigation -->
+      <div class="collapse navbar-collapse small order-lg-0" id="topNavbar">
+        <ul class="navbar-nav d-flex w-100 justify-content-evenly px-2 px-lg-7 links-dark">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Call me (+919) 695-100-143</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">rahul.singh4800@gmail.com</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Download CV
+              <i class="bi bi-file-earmark-arrow-down-fill text-primary"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Let's chat
+              <i class="bi bi-chat-dots-fill text-primary"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+  <!-- Offscreen backdrop -->
+  <div id="offscreen-backdrop" class="z-index-master w-h-100 fixed-top bg-black bg-opacity-50" data-tor="active(body):[fade.in @pointer-events(none;auto)] click:class.remove(active, {target: body})"></div>
+
+  <!-- Offscreen navigation -->
+  <nav id="offscreen-nav" class="overflow-auto position-fixed z-index-master end-0 bg-white shadow w-80 w-sm-auto p-5 pe-8 h-100" data-tor="active(body):pull.left(full)">
+    <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-tor="click:class.remove(active, {target: body})" aria-label="Close"></button>
+    <ul class="nav flex-column links-dark nav-style-opacity nav-style-hover-primary" data-tor-group="
+      .nav-item => active(body):[fade.in pull.left(sm)] delay(/25ms+25ms/) slow;
+      .nav-link => hover:push.right(xs) quad;
+    ">
+
+      <li class="nav-item">
+        <a class="nav-link transition-unset" href="#home">Home</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link transition-unset" href="#services">Services</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link transition-unset" href="#skills">Skills</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link transition-unset" href="#experience">Experience</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link transition-unset" href="#portfolio">Portfolio</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link transition-unset" href="#testimonials">Testimonials</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link transition-unset" href="#work-process">Work Process</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link transition-unset" href="#contact">Contact</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link transition-unset" href="#stay-connected">Stay connected</a>
+      </li>
+
+      <li class="nav-item">
+        <h6 class="text-primary font-sans-serif small text-uppercase opacity-50 mt-5 ms-3">Subpages</h6>
+        <ul class="nav flex-column">
+
+          <li class="nav-item">
+            <a class="nav-link transition-unset" href="./light-services.html">Services</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link transition-unset" href="./light-portfolio.html">Portfolio</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link transition-unset" href="./light-contact.html">Contact</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link transition-unset" href="./light-404.html">404</a>
+          </li>
+
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <h1 class="text-center pt-8 pb-7">
+    <span>My</span>
+    <span class="text-primary">Services</span>
+  </h1>
+
+  <section class="bg-light py-8">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-md-2" data-tor-group=".circle => inview:[scale.from(0) rotate.from(20deg)] delay(/+50ms/) slow; h3 => inview:[pull.left(sm) fade.in] slow delay(/+50ms/);">
+
+        <div class="col">
+          <div class="mb-7">
+            <!-- Icon -->
+            <div class="circle p-5 bg-secondary mb-4" data-tor="!hover(p):bg(primary)">
+              <i class="bi bi-phone text-white h3 mb-0"></i>
+            </div>
+            <!-- Heading -->
+            <h2 class="font-sans-serif pb-3 mb-4 border-bottom">App design</h2>
+            <!-- Description -->
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in rhoncus tortor. Suspendisse sodales odio vitae turpis dictum, sit amet sollicitudin turpis fringilla. Curabitur ultrices in dui et maximus. In dapibus fermentum nisl, non condimentum mauris hendrerit in. Maecenas aliquet dictum lacus, quis hendrerit leo mollis ullamcorper. Nulla facilisi. Sed molestie enim a nisi dapibus, ac aliquam dolor tristique. Nulla maximus ullamcorper dictum. </p>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="mb-7">
+            <!-- Icon -->
+            <div class="circle p-5 bg-secondary mb-4" data-tor="!hover(p):bg(primary)">
+              <i class="bi bi-globe text-white h3 mb-0"></i>
+            </div>
+            <!-- Heading -->
+            <h2 class="font-sans-serif pb-3 mb-4 border-bottom">Web design</h2>
+            <!-- Description -->
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in rhoncus tortor. Suspendisse sodales odio vitae turpis dictum, sit amet sollicitudin turpis fringilla. Curabitur ultrices in dui et maximus. In dapibus fermentum nisl, non condimentum mauris hendrerit in. Maecenas aliquet dictum lacus, quis hendrerit leo mollis ullamcorper. Nulla facilisi. Sed molestie enim a nisi dapibus, ac aliquam dolor tristique. Nulla maximus ullamcorper dictum. </p>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="mb-7">
+            <!-- Icon -->
+            <div class="circle p-5 bg-secondary mb-4" data-tor="!hover(p):bg(primary)">
+              <i class="bi bi-brush text-white h3 mb-0"></i>
+            </div>
+            <!-- Heading -->
+            <h2 class="font-sans-serif pb-3 mb-4 border-bottom">Art &amp; Illustration</h2>
+            <!-- Description -->
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in rhoncus tortor. Suspendisse sodales odio vitae turpis dictum, sit amet sollicitudin turpis fringilla. Curabitur ultrices in dui et maximus. In dapibus fermentum nisl, non condimentum mauris hendrerit in. Maecenas aliquet dictum lacus, quis hendrerit leo mollis ullamcorper. Nulla facilisi. Sed molestie enim a nisi dapibus, ac aliquam dolor tristique. Nulla maximus ullamcorper dictum. </p>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="mb-7">
+            <!-- Icon -->
+            <div class="circle p-5 bg-secondary mb-4" data-tor="!hover(p):bg(primary)">
+              <i class="bi bi-bootstrap text-white h3 mb-0"></i>
+            </div>
+            <!-- Heading -->
+            <h2 class="font-sans-serif pb-3 mb-4 border-bottom">Branding</h2>
+            <!-- Description -->
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in rhoncus tortor. Suspendisse sodales odio vitae turpis dictum, sit amet sollicitudin turpis fringilla. Curabitur ultrices in dui et maximus. In dapibus fermentum nisl, non condimentum mauris hendrerit in. Maecenas aliquet dictum lacus, quis hendrerit leo mollis ullamcorper. Nulla facilisi. Sed molestie enim a nisi dapibus, ac aliquam dolor tristique. Nulla maximus ullamcorper dictum. </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <section id="contact" class="py-5 py-md-8">
+    <div class="container py-4">
+      <div class="row row-cols-1 row-cols-md-2 center-v">
+
+        <div class="col">
+          <!-- Badge -->
+          <div class="title-badge d-inline-block mb-6 bg-primary text-primary bg-opacity-10 px-3 small">Contact me</div>
+
+          <h2 class="mb-7 overflow-hidden mb-5" data-tor-group=".fx => scroll:[@width(0;auto) @visibility(hidden;visible), {start: /10+5/, end: /10+5/}];">
+            Let&#39;s talk together and calculate your project
+            <span class="text-primary">
+
+              <span class="text-nowrap"><span class="fx">e</span><span class="fx">s</span><span class="fx">t</span><span class="fx">i</span><span class="fx">m</span><span class="fx">a</span><span class="fx">t</span><span class="fx">e</span></span>
+
+              <span class="text-body text-opacity-30 ms-n1" data-tor="loop:blink">|</span>
+            </span>
+          </h2>
+
+          <form class="w-md-80 form-clean inputs-transparent" data-tor-group=".form-control => !focus:[border(dark) bg(light)];">
+            <div class="mb-2">
+              <label for="contact-name" class="form-label opacity-70">Your name</label>
+              <input type="text" class="form-control p-3 border-bottom" id="contact-name" aria-describedby="contact-name">
+            </div>
+            <div class="mb-2">
+              <label for="contact-email" class="form-label opacity-70">Your email</label>
+              <input type="email" class="form-control p-3 border-bottom" id="contact-email" aria-describedby="contact-email">
+            </div>
+            <div class="mb-2">
+              <label for="contact-subject" class="form-label opacity-70">Subject</label>
+              <input type="email" class="form-control p-3 border-bottom" id="contact-subject" aria-describedby="contact-subject">
+            </div>
+            <div class="mb-2">
+              <label for="contact-message" class="form-label opacity-70">Message</label>
+              <textarea class="form-control p-3 border-bottom" id="contact-message" rows="2"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-arrow py-2 px-3 float-md-end w-100 w-md-auto">Submit</button>
+          </form>
+        </div>
+
+        <div class="col">
+          <div class="px-md-7 d-none d-md-block" data-tor-group="
+            #vase-wfh-10_1_, #cupboard_1_ => inview:scale.from(0) originY(100%);
+            #female-wfh-10_1_       => inview:[pull.right(md) fade.in];
+            #computer-wfh-10_1_     => inview:[pull.left(md) fade.in] wait(300ms) click:class.toggle(active, {target: #illustration-contact});
+            #message-wfh-10_1_      => active(#illustration-contact):scale.to(0) hover:scale.to(85%) slow;
+            #message-head-wfh-10_1_ => active(#illustration-contact):scale.from(0) slow;
+            #message-wfh-10_1_ .illustration-loop     => loop:glow(3rem, {color: --bs-blue, duration: 3s});
+
+            .illustration-reveal    => delay(/+100ms/) slow;
+            .illustration-interaction => mouseX:@parallax(/+3/);
+          ">
+            <svg version="1.1" id="illustration-contact" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 862.5 870.6" xml:space="preserve">
+              <style>
+                .st0 {
+                  fill: #404040
+                }
+
+              </style>
+              <path class="st0" d="M688.2 605c9.7 16.6 4.1 37.9-12.5 47.5 22 35.1 48.3 70.2 65.6 99l83-42.2c-8.6-20.5-19-40.1-31.1-58.7-46-70.4-56.4-79-65.4-105.5.1 0 .1-.1.2-.1-.3-.8-.5-1.5-.8-2.3-8-24.7-8.3-125.9-40.1-180.4 13.8.4 44.6-1.2 55-22.6 15.5-35.7-13.5-83-19.3-93.7-14.5 12.6-74.4 29-93.7-33.8-24.8-11.3-31.3-29.8-31.3-45.9.1 16.1 6.5 34.5 31.3 45.8 19.3 62.8 79.2 46.3 93.7 33.8.5-.4 1.1-.9 1.7-1.4 6.1-5.1 11.4-11 15.7-17.7 23.1-37-7-75.7-35.8-82.2 5.8-55.1-48.3-58.9-48.3-58.9s-2.9-14.4-5.8-27c-4.2-18.1-10.3-45.5-41.9-55.4-17.3-5.4-32.5 0-42.3 5.5C549.9-10 518 3.6 525.7 28.6c4.2 13.7 19.6 21.1 19.6 21.1v.1c19.2 10.2 43.1 15.5 43.1 15.5s15.5-22.3 29-13.6c9.5 6.1 10.5 15.8 6.9 23.7 3.5-7.9 2.4-17.4-7-23.5-13.4-8.7-28.9 13.5-28.9 13.5s-23.9-5.3-43.1-15.5c-.6 5-1 10-1.1 15-.1 1.9-.1 3.7-.3 5.5 0 0-8.7 1.5-9.2 5.5-.6 4.9 7.5 8.2 7.5 8.2-1.7 11.2-3.2 19.8 1.8 29 4.4 8.1 12.9 17.1 35.7 11.4l.1 10.5h.1l.1 7s-37.9-1.3-56.2 22.8c-8.1 10.7-21.6 37.2-33.9 63.1v-69.3c0-17.9-14.5-32.4-32.4-32.4H184.4c-17.9.1-32.4 14.6-32.4 32.4v190.1c0 17.9 14.5 32.4 32.4 32.4h91.2v36.8c0 10.7 8.6 19.3 19.3 19.3h12.2-178.6c-11 0-20 9-20 20v81.4c-3.4 1.6-7.2 3.8-11 6.6-10.5 7.6-17.1 16.4-14.8 19.6 2.3 3.2 12.7-.3 23.3-8 .9-.7 1.8-1.3 2.6-2v78.4H61s9.2 20.7 33.3 20.7c5.5 0 10.2-1.1 14.2-2.7v.1c-4 1.7-8.8 2.8-14.3 2.8C70.1 654 61 633.3 61 633.3s-67.8 155-1.2 236.6h68.9l.1-.1H461v.1h133.3c.3 0 .6 0 .9-.1h25.2V549.1h.5c.6 0 1.1-.1 1.6-.1h.4c.5-.1.9-.1 1.4-.2h.2c1.1-.2 2.2-.6 3.2-1 1.3-.5 2.6-1.2 3.7-2.1-1.2.9-2.5 1.6-3.8 2.2 3.4 9.8 8.7 25.3 16.1 43 7.1 17.2 15.5 34 24.9 50 2.3 3.9 4.7 7.7 7.1 11.6 10.6-6.2 17.1-17.6 17-29.9 0-4.9-1-9.7-3-14.2-7.9-17.5-28.4-25.4-46-17.5 16.2-7.4 35.5-1.3 44.5 14.1zM181 323.3l-.1-82.5h.1v82.5zm388.5 113.9c12.4-29.9 16.4-75.7 17.6-95.6h.1c-1.2 19.9-5.1 65.7-17.7 95.6zm91.1 110.1zm8-7.7c.1-.1.1-.2.2-.3 1.7 3.4 4.5 6.2 7.9 7.9 4.8 2.4 10.1 2.4 14.7.6-8.5 3.5-18.4.1-22.8-8.2zm23.9 7.7zm34.6-1.6c-.1 0-.1 0 0 0-.1 0-.1 0 0 0zm-24.2-3c4.7 5.6 12 7.6 18.6 5.7-8.1 2.4-16.9-1.1-21-8.8.1-.1.1-.2.2-.3.6 1.2 1.3 2.3 2.2 3.4zm20 5.3c-.2.1-.4.1-.6.2.2-.1.4-.2.6-.2zM606.7 88.6c-6.2 14.6-6.9 31.1-1.8 46.2v.1h-.1c-5-15.2-4.4-31.6 1.9-46.3zm-61.8 210.5l7.6-18.5-7.5 18.5 2.9 42.5c-1 2-19 38.4-33.4 95.6H379.1h14.3c3.8 0 6.8-3.1 6.8-6.8 0-3.3-2.3-5.9-5.3-6.6 6.3-6.8 10.1-12.6 10.1-12.6s6.5-2.1 16.3-5.9l-.1-.1c21.9-8.4 60.6-25 81.2-44.3 28.9-27.1 42.5-61.8 42.5-61.8zM198.1 155.2c-9.4 0-17.1 7.7-17.1 17.2v64.4h-.1v-64.4c0-9.5 7.7-17.2 17.2-17.2zm438.6 384.4c.1-.1.1-.2.2-.3 1.7 3.4 4.5 6.2 7.9 7.9 4.8 2.4 10.1 2.4 14.7.6-8.5 3.5-18.4.1-22.8-8.2z" />
+              <path class="st0" d="M862.1 802.6c-1.1-3.2-4.6-4.8-7.7-3.7l-74.1 37.9c0-.1-2-2.8-5.3-6.4 3.3 3.5 5.3 6.2 5.3 6.2l74.1-37.9c-.3.1-.5.2-.8.3l-2.5 1.2c.1.1-5.6-40.7-26.8-90.9l-83 42.2c12.9 21.5 20.8 39.7 18.1 51.7-1 4.2-2.4 8.3-4.3 12.2h.1c-9.2 19.3-25.4 31-14.1 54.5l118-59.9c2.7-1.4 4-4.5 3-7.4zM692.7 622.6z" />
+              <ellipse transform="rotate(-69.341 39.348 589.985)" class="st0" cx="39.3" cy="590" rx="9.3" ry="41.9" />
+              <path class="st0" d="M46.9 552.2s0-.1 0 0c13.3 6.3 29.2.8 35.6-12.5 3.4-7.1 3.5-15.5.2-22.7h.1c-6.2-13.4-22-19.3-35.4-13.1-13.4 6.2-19.3 22-13.1 35.4 2.5 5.7 7 10.2 12.6 12.9zM95.6 482.4zM48 466.7c.2 7.8 3.9 15.3 10.1 20.1 11.6 9.1 28.3 7.2 37.5-4.4-.4-.4-.7-.8-1.1-1.2.4.4.8.8 1.1 1.2 3.8-4.9 5.9-10.9 5.7-17.1-.3-14.7-12.5-26.4-27.3-26.1-14.7.3-26.4 12.5-26.1 27.2-.1 0-.3.1-.4.1l.5.2z" />
+            </svg>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- end .container -->
+  </section>
+  <!-- end #work-process -->
+  <section id="stay-connected">
+    <div class="container position-relative pb-1 overflow-hidden overflow-sm-visible">
+      <div class="row">
+
+        <div class="col-md-3 my-3">
+          <div class="d-none d-md-block px-5">
+            <svg version="1.1" id="illustration-footer" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 660.3 1260.5" xml:space="preserve">
+              <style>
+                .st0 {
+                  fill: #404040
+                }
+
+              </style>
+              <path class="st0" d="M176.9 1011.3V849.8L28.8 1259z" />
+              <path class="st0" d="M660.2 532.8H542.9c0-.2.1-.4.2-.8h13.6l-.2-.4H559.8l-17.5-30.1c-1.1-3.4-2.5-6.5-4.2-8.8l56.7-119.5c.5-1 .7-2 .7-3.1 0-4-3.2-7.2-7.2-7.2H382c-3.6-24.3-12.5-57.2-34.5-77.3-20.1-18.3-56.9-32.9-71.1-38 .4-.1.8-.3 1.2-.4 16.3 0 40.6-29 51.4-58-.1 2.1.2 4.2.7 6.3 2 7.1 8.4 12 15.8 12 1.5 0 3-.2 4.5-.6 7.2-2 11.3-9.5 9.3-16.7-1.7-6-7.9-9.5-13.9-7.8-5 1.4-7.9 6.6-6.5 11.6 1.2 4.2 5.6 6.6 9.8 5.4 1.1-.3 1.7-1.4 1.4-2.5-.3-1.1-1.4-1.7-2.5-1.4-2 .6-4.2-.6-4.8-2.7-.8-2.9.8-5.9 3.7-6.7 3.9-1.1 7.9 1.1 9 5 1.4 5.1-1.5 10.3-6.6 11.8-6.6 1.9-13.5-2-15.4-8.6-1.5-5-.4-10.4 2.9-14.5 36.6.6 37.4-25.5 36.4-29.9-1-4.6-6.2-9.7.5-25.1 6.7-15.4-.6-28.7-8.8-36.4-8.2-7.7-1-13.4-5.5-24.1-4.5-10.7-18.6-13.3-18.6-13.3s5.6-8.1 0-14.3c-2.3-2.5-6.2-3.7-10.1-4.3.3-.1.6-.3.8-.5 7.3-5.3 7.1-13.3 4.6-18.9-2.3-5.2-8.2-7.6-13.5-5.6-2 .8-3.7 2.4-4.5 4.5-.8 2.1-.8 4.5.2 6.6 1.6 3.6 5.8 5.3 9.5 3.9 1-.4 1.5-1.6 1.1-2.6-.4-1-1.6-1.5-2.6-1.1-1.7.6-3.6-.2-4.4-1.9-.5-1-.5-2.3-.1-3.4s1.2-1.9 2.3-2.3c3.3-1.2 7 .3 8.4 3.5 1 2 3.4 9.1-3.3 14-2.7 1.9-6 2.8-9.3 2.5-.3-4-2.9-20.1-25.5-28.5-26.1-9.7-44.3 11.7-44.3 11.7s-19.9-14.1-41-6.4c-13.9 5-15.4 17.4-15.4 17.4-4.4-.7-8.9-.7-13.2.2-3 .7-5.8 2.1-8.1 4.1-1.9 1.7-3.4 3.8-4.3 6.2-1.2 3.4-1.8 7-1.6 10.7-7.9 2.8-12.3-3.2-13.5-5.1-1.8-3-1-6.9 1.8-8.9.9-.6 2.1-.8 3.2-.6 1.2.3 2.2 1 2.8 2 1 1.6.6 3.6-.9 4.7-.9.6-1.1 1.9-.5 2.8.6.9 1.9 1.1 2.8.5 3.3-2.3 4.2-6.7 2.1-10.1-1.2-1.9-3.2-3.3-5.4-3.8s-4.5-.1-6.3 1.2c-4.6 3.2-5.9 9.4-3 14.2.6 1 1.4 2 2.2 2.9-7.1-.2-15.3 1.5-24.3 6.3-34 18.3-16 56.1-16 56.1s-20 4-25.1 24.3c-4.3 17.1 6.3 32.8 11.1 38.9-3.2 6.4-9.4 11.8-15.1 12.1-6.9.4-12.8-4.8-13.2-11.7-.3-5.3 3.7-9.8 9-10.1 4-.3 7.5 2.8 7.7 6.8.2 3-2.1 5.5-5.1 5.7-2.1.1-4-1.5-4.1-3.7 0-1.1-1-2-2.1-1.9-1.1 0-2 1-1.9 2.1.3 4.4 4 7.8 8.4 7.5 5.2-.3 9.2-4.7 8.9-9.9-.4-6.2-5.7-10.9-11.9-10.6-7.5.4-13.2 6.8-12.8 14.3.5 8.7 7.7 15.5 16.4 15.5h1c2.5-.2 5-.9 7.2-2.2-2.2 5.3-3.1 12.7.2 22.6 8.2 25.1 48.7 23 48.7 23 3.4 7.3 10.4 9.9 17.1 10.5-23.5 3.3-60.3 12.6-93.9 39.2C19.3 314.5.2 352.4.2 352.4s11 2.6 26.8 9.6c-1.5 4.2-41.5 122-21.3 151 5.7 8.2 32.7 13 67.3 15.8l-4.5 21.8s8.8 4.9 27.9 9.9c-3 5.5-25.1 48.5-47 129.6-12.5 46.2 1.4 81.8 25.6 104.7h-3.3c-15.2 0-27.5 12.3-27.5 27.5s12.3 27.5 27.5 27.5h262.1c-9.7 72.3-.7 186.6 5.7 242.7.2 1.6-.1 3-.7 4.2-.1-.1-.1-.2-.1-.3 0 0-7.4.7-15.5 3.1l-90.4-249.7v161.5L380.9 1259l-13.5-37.4c4.8-4.8 10.2-14.9 2.7-33.9-1.6-4.1-7.8-18.9-7.8-18.9 4.8-45.5 20-102.1 36.3-154-2.5 65.2 10.2 136.7 21.8 186.3l-6.1 13.6c-.1 0-.2.1-.4.1 0 0-22.8 44.5 6 44.6 12.3 0 108-.3 108-.3s3.7-22.8-27.8-27.1c-4.4-.6-14.4-2-14.4-2s.1.2.3.5c-.2-.1-.2-.2-.2-.2-21.7-21.4-33.7-36.8-28.1-77.5 4.2-29.3 54-244.1 63.5-295.3 5.7-30.8-.1-81.1-40.9-81.7 5.7-17.1 10.2-30.5 11.2-34.5 5.5-21 3.2-60.6-19.5-66.8 2.3.3 3.6.8 3.6.8-34.7-19.8-81.3-37.7-188.3-44.3-10.5-27.5-11.5-50.2-13.5-70.5 1.3-.5 2.5-.9 3.6-1.4h382.8v-26.3zm-119.1 0h-21.5c.1-.2.1-.5.2-.8h18.9c.9.4 1.7.7 2.4.8zm-245.2-.8H514.2l2.1.8H295.7c.1-.3.1-.5.2-.8z" />
+            </svg>
+          </div>
+        </div>
+
+        <div class="col-md-4 offset-md-1 center-both my-3">
+          <div class="text-center" data-tor-group=".fx => inview:reveal(up) delay(/+100ms/);">
+            <h2 class="fx mb-5">Stay Connected</h2>
+            <p class="fx opacity-50 fw-500 mb-2">India</p>
+            <a href="mailto:#" class="fx text-dark h3 font-sans-serif d-block mb-3">rahul.singh4800@gmail.com</a>
+            <p class="fx">(+919) 695-100-143</p>
+          </div>
+        </div>
+      </div>
+      <!-- end .row -->
+
+      <div class="position-absolute bottom-0 z-index-n1 w-100">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1363 74.1" class="w-100 overflow-visible" data-tor-group="path => mouseX:@parallax(/+3/);">
+          <path d="M0 73.9s85-29 117-29 86 25 111 27 323 5 354-13 58.6-58 106-58c39.5 0 74 19.9 94 36 26.5 21.4 90 30 122 26s338.5 11 338.5 11H0z" fill="#f8e9de" />
+          <path d="M208.1 74.1s81.9-27.9 127.1-30 84.1 11.3 123.1 15.4 76.9-29.8 112.9-33.9 92.3 9.2 134.4 24.6c42.1 15.4 96.4 34.9 142.6 13.3C894.3 42.1 916.8 0 1003 0s105.7 10.3 137.5 27.7 60.5 27.7 88.2 16.4c27.7-11.3 35.9-14.4 60.5 0s30.8 29.8 30.8 29.8l-1111.9.2z" fill="#f79682" />
+          <path d="M283 73.9s77-28 121-30 82 11 120 15 75-29 110-33 90 9 131 24 94 34 139 13 67-62 151-62 103 10 134 27 59 27 86 16 35-14 59 0 29 30 29 30H283z" fill="#77acd7" />
+        </svg>
+      </div>
+
+    </div>
+    <!-- end .container -->
+  </section>
+  <!-- end #footer -->
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <!-- Scripts -->
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+  <!-- Bootstrap `.js` file -->
+  <script src="./assets/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

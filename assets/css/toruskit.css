@@ -1,0 +1,1423 @@
+/*!
+ * Torus Kit v2.0 (https://toruskit.com/)
+ * Copyright 2021 Torus Kit
+ */
+:root {
+  --tor-predefined-values:  blue,indigo,purple,pink,red,orange,yellow,green,teal,cyan,white,gray,gray-dark,navy,maroon,brown,magenta,lime,black,primary,secondary,success,info,warning,danger,light,dark,no,xs,sm,md,lg,xl,full,half,risen,pop,fastest,faster,fast,slow,slower,slowest;
+}
+
+.position-absolute {
+  position: absolute !important;
+}
+
+.position-relative {
+  position: relative !important;
+}
+
+.position-fixed {
+  position: fixed !important;
+}
+
+@media (min-width: 576px) {
+  .position-sm-absolute {
+    position: absolute !important;
+  }
+  .position-sm-relative {
+    position: relative !important;
+  }
+  .position-sm-fixed {
+    position: fixed !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .position-md-absolute {
+    position: absolute !important;
+  }
+  .position-md-relative {
+    position: relative !important;
+  }
+  .position-md-fixed {
+    position: fixed !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .position-lg-absolute {
+    position: absolute !important;
+  }
+  .position-lg-relative {
+    position: relative !important;
+  }
+  .position-lg-fixed {
+    position: fixed !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .position-xl-absolute {
+    position: absolute !important;
+  }
+  .position-xl-relative {
+    position: relative !important;
+  }
+  .position-xl-fixed {
+    position: fixed !important;
+  }
+}
+
+@media (min-width: 1400px) {
+  .position-xxl-absolute {
+    position: absolute !important;
+  }
+  .position-xxl-relative {
+    position: relative !important;
+  }
+  .position-xxl-fixed {
+    position: fixed !important;
+  }
+}
+
+.position-fixed {
+  position: fixed !important;
+}
+
+[data-tor] {
+  --tor-top: auto;
+  --tor-right: auto;
+  --tor-bottom: auto;
+  --tor-left: auto;
+  --tor-shift-x: 0%;
+  --tor-shift-y: 0%;
+  --tor-add-shift-x: 0%;
+  --tor-add-shift-y: 0%;
+}
+
+[data-tor~="top"] {
+  --tor-top: 0;
+}
+
+[data-tor~="bottom"] {
+  --tor-bottom: 0;
+}
+
+[data-tor~="left"] {
+  --tor-left: 0;
+}
+
+[data-tor~="right"] {
+  --tor-right: 0;
+}
+
+[data-tor~="middle"] {
+  --tor-top: 50%;
+  --tor-shift-y: -50% !important;
+}
+
+[data-tor~="center"] {
+  --tor-left: 50%;
+  --tor-shift-x: -50% !important;
+}
+
+[data-tor] {
+  top: var(--tor-top);
+  right: var(--tor-right);
+  bottom: var(--tor-bottom);
+  left: var(--tor-left);
+  --tor-moveX: calc(var(--tor-shift-x, 0) + var(--tor-add-shift-x, 0)) !important;
+  --tor-moveY: calc(var(--tor-shift-y, 0) + var(--tor-add-shift-y, 0)) !important;
+}
+
+[data-tor~="middle"]:not([data-fx]),
+[data-tor~="center"]:not([data-fx]) {
+  transform: translateX(var(--tor-moveX)) translateY(var(--tor-moveY)) !important;
+}
+
+[data-tor-push] {
+  --tor-push-x: 0%;
+  --tor-push-y: 0%;
+}
+
+[data-tor-push*="up"] {
+  --tor-push-y-direction: -1;
+}
+
+[data-tor-push*="left"] {
+  --tor-push-x-direction: -1;
+}
+
+[data-tor-push] {
+  --tor-moveX: calc( (var(--tor-push-x, 0%) * var(--tor-push-x-direction, 1)) + var(--tor-shift-x, 0%) ) !important;
+  --tor-moveY: calc( (var(--tor-push-y, 0%) * var(--tor-push-y-direction, 1)) + var(--tor-shift-y, 0%) ) !important;
+}
+
+[data-tor-push]:not([data-tor-fx]) {
+  transform: translateX(var(--tor-moveX)) translateY(var(--tor-moveY)) !important;
+}
+
+:root {
+  --tor-resolutions: "xxl:1400px", "xl:1200px", "lg:992px", "md:768px", "sm:576px", "all:0px";
+}
+
+[data-tor] {
+  --tor-wait: 0ms;
+  --tor-delay: 0ms;
+  --tor-duration: 350ms;
+  --tor-speed: 1;
+  --tor-timing: cubic-bezier(0.35, 0, 0.1, 1);
+  --tor-duration-all: calc( var(--tor-duration, 350ms) * var(--tor-speed) );
+  --tor-timing-all: var(--tor-timing);
+  --tor-delay-all: calc( var(--tor-wait, 0ms) + var(--tor-delay, 0ms) );
+  --tor-property-all: all;
+  --tor-originX: center;
+  --tor-originY: center;
+  --tor-originZ: 0px;
+  transition-property: var(--tor-property-all);
+  transition-timing-function: var(--tor-timing-all);
+  transition-duration: var(--tor-duration-all);
+  transition-delay: var(--tor-delay-all);
+  transform-origin: var(--tor-originX) var(--tor-originY) var(--tor-originZ);
+}
+
+[data-tor*="z-level"],
+[data-tor*="push."],
+[data-tor*="pull."],
+[data-tor*="translate"],
+[data-tor*="rotate"],
+[data-tor*="scale"],
+[data-tor*="skew"],
+[data-tor*="reveal"] {
+  --tor-scaleX: initial;
+  --tor-scaleY: initial;
+  --tor-skewX: initial;
+  --tor-skewY: initial;
+  --tor-rotate: initial;
+  --tor-rotateX: initial;
+  --tor-rotateY: initial;
+  --tor-translateX: initial;
+  --tor-translateY: initial;
+  --tor-translateZ: initial;
+  --tor-moveX: initial;
+  --tor-moveY: initial;
+  --tor-z-level: initial;
+  --tor-perspective-self: initial;
+  transform: perspective(var(--tor-perspective-self, 0px)) scale3d(var(--tor-scaleX, var(--tor-scale, 1)), var(--tor-scaleY, var(--tor-scale, 1)), 1) translate3d(calc( var(--tor-translateX, 0%) + var(--tor-moveX, 0%)), calc( var(--tor-translateY, 0%) + var(--tor-moveY, 0%)), calc( var(--tor-translateZ, 0px) + var(--tor-z-level, 0px) + var(--moz-opacity-fix, 0px))) rotateX(var(--tor-rotateX, 0deg)) rotateY(var(--tor-rotateY, 0deg)) rotateZ(var(--tor-rotate, 0deg)) skew(var(--tor-skewX, var(--tor-skew, 0deg)), var(--tor-skewY, var(--tor-skewY, 0deg)));
+}
+
+[data-tor*="scroll:"],
+[data-tor*="mouse:"],
+[data-tor*="mouseX:"],
+[data-tor*="mouseY:"],
+[data-tor*="sensor:"],
+[data-tor*="sensorX:"],
+[data-tor*="sensorY:"] {
+  transition: none;
+}
+
+[data-tor~="origin.left"] {
+  --tor-originX: left;
+}
+
+[data-tor~="origin.right"] {
+  --tor-originX: right;
+}
+
+[data-tor~="origin.top"] {
+  --tor-originY: top;
+}
+
+[data-tor~="origin.bottom"] {
+  --tor-originY: bottom;
+}
+
+svg [data-tor] {
+  transform-box: fill-box;
+}
+
+[data-tor*=":rotate."] > .tor-hit-area,
+[data-tor*=":pull."] > .tor-hit-area,
+[data-tor*=":push."] > .tor-hit-area {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(calc(var(--tor-translateX, 0%) * -1)) translateY(calc(var(--tor-translateY, 0%) * -1));
+  transition: inherit;
+  pointer-events: none;
+  z-index: -1;
+}
+
+[data-tor*=":rotate."]:hover > .tor-hit-area,
+[data-tor*=":pull."]:hover > .tor-hit-area,
+[data-tor*=":push."]:hover > .tor-hit-area {
+  transition: inherit;
+  pointer-events: auto;
+}
+
+[data-tor*=":push."]:hover > .tor-hit-area,
+[data-tor*=":pull."]:hover > .tor-hit-area {
+  height: calc(var(--tor-translateY, 100%) * var(--tor-hitY-calc, 1) + 100%);
+  width: calc(var(--tor-translateX, 100%) * var(--tor-hitX-calc, 1) + 100%);
+}
+
+[data-tor*=":push.up"] > .tor-hit-area,
+[data-tor*=":pull.up"] > .tor-hit-area {
+  bottom: 0;
+  --tor-hitY-calc: -1;
+}
+
+[data-tor*=":push.down"] > .tor-hit-area,
+[data-tor*=":pull.down"] > .tor-hit-area {
+  top: 0;
+}
+
+[data-tor*=":push.left"] > .tor-hit-area,
+[data-tor*=":pull.left"] > .tor-hit-area {
+  left: initial;
+  right: 0;
+  --tor-hitX-calc: -1;
+}
+
+.transition-unset {
+  transition: unset !important;
+}
+
+.tor-hidden {
+  visibility: hidden !important;
+}
+
+[data-tor-parent~="inview"]:not(.inview) [data-tor*="inview("],
+[data-tor*="inview:"]:not(.inview) {
+  transition: none !important;
+}
+
+span[data-tor] {
+  display: inline-block;
+}
+
+.perspective {
+  perspective: 1000px;
+}
+
+.perspective [data-fx] {
+  --perspective-c: 0;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+[data-fx~="backface-hidden"],
+.backface-hidden {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.no-transform,
+[data-fx~="no-transform"] {
+  transform: none !important;
+}
+
+.tr-none {
+  transition: none !important;
+}
+
+@-moz-document url-prefix() {
+  [data-tor*="@transform"],
+  [data-tor*="reveal"],
+  [data-tor*="rotate"],
+  [data-tor*="rotate"] .tor-flip-front,
+  [data-tor*="rotate"] .tor-flip-back {
+    outline: 1px solid transparent;
+  }
+  [data-tor*="scale"],
+  [data-tor*="pull"],
+  [data-tor*="push"] {
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+  }
+  img[data-tor*="scale"],
+  img[data-tor*="pull"],
+  img[data-tor*="push"] {
+    rotate: 0deg;
+    image-rendering: optimizeQuality;
+  }
+  svg[data-tor] {
+    outline: none;
+    rotate: 0;
+  }
+  svg [data-tor] {
+    rotate: 0.02deg;
+    will-change: transform;
+  }
+}
+
+[data-tor~="quad"] {
+  transition-duration: 450ms !important;
+  transition-timing-function: cubic-bezier(0.23, 0, 0, 1) !important;
+}
+
+[data-tor~="exponential"] {
+  transition-duration: 600ms !important;
+  transition-timing-function: cubic-bezier(0.9, 0, 0.1, 1) !important;
+}
+
+[data-tor~="bounce"] {
+  transition-duration: 500ms !important;
+  transition-timing-function: cubic-bezier(0.4, 0, 0, 1.4) !important;
+}
+
+[data-tor~="bounce-exponential"] {
+  transition-duration: 600ms !important;
+  transition-timing-function: cubic-bezier(0.9, 0, 0, 1.3) !important;
+}
+
+[data-tor~="linear"] {
+  transition-duration: 350ms !important;
+  transition-timing-function: linear !important;
+}
+
+[data-tor~="ease-out"] {
+  transition-duration: 700ms !important;
+  transition-timing-function: cubic-bezier(0, 0.2, 0.15, 1) !important;
+}
+
+[data-tor~="fastest"] {
+  --tor-speed: 0.45;
+}
+
+[data-tor~="faster"] {
+  --tor-speed: 0.6;
+}
+
+[data-tor~="fast"] {
+  --tor-speed: 0.85;
+}
+
+[data-tor~="slow"] {
+  --tor-speed: 2;
+}
+
+[data-tor~="slower"] {
+  --tor-speed: 3;
+}
+
+[data-tor~="slowest"] {
+  --tor-speed: 4;
+}
+
+[data-tor*="loop:"] {
+  --tor-fastest: 0.45;
+  --tor-faster: 0.6;
+  --tor-fast: 0.85;
+  --tor-slow: 2;
+  --tor-slower: 3;
+  --tor-slowest: 4;
+}
+
+[data-tor*="bg("] {
+  --tor-bg-opacity: 1;
+  --tor-bg-lightness: 1;
+  --tor-bg-blue: hsla(230, 100%, calc(56% * var(--tor-bg-lightness, 1)), var(--tor-bg-opacity, 1));
+  --tor-bg-indigo: hsla(263, 90%, calc(51% * var(--tor-bg-lightness, 1)), var(--tor-bg-opacity, 1));
+  --tor-bg-purple: hsla(261, 51%, calc(51% * var(--tor-bg-lightness, 1)), var(--tor-bg-opacity, 1));
+  --tor-bg-pink: hsla(330, 67%, calc(52% * var(--tor-bg-lightness, 1)), var(--tor-bg-opacity, 1));
+  --tor-bg-red: hsla(354, 70%, calc(54% * var(--tor-bg-lightness, 1)), var(--tor-bg-opacity, 1));
+  --tor-bg-orange: hsla(27, 98%, calc(54% * var(--tor-bg-lightness, 1)), var(--tor-bg-opacity, 1));
+  --tor-bg-yellow: hsla(45, 100%, calc(51% * var(--tor-bg-lightness, 1)), var(--tor-bg-opacity, 1));
+  --tor-bg-green: hsla(152, 69%, calc(31% * var(--tor-bg-lightness, 1)), var(--tor-bg-opacity, 1));
+  --tor-bg-teal: hsla(162, 73%, calc(46% * var(--tor-bg-lightness, 1)), var(--tor-bg-opacity, 1));
+  --tor-bg-cyan: hsla(190, 90%, calc(50% * var(--tor-bg-lightness, 1)), var(--tor-bg-opacity, 1));
+  --tor-bg-white: hsla(0, 0%, calc(100% * var(--tor-bg-lightness, 1)), var(--tor-bg-opacity, 1));
+  --tor-bg-gray: hsla(210, 14%, calc(83% * var(--tor-bg-lightness, 1)), var(--tor-bg-opacity, 1));
+  --tor-bg-gray-dark: hsla(210, 10%, calc(23% * var(--tor-bg-lightness, 1)), var(--tor-bg-opacity, 1));
+  --tor-bg-navy: hsla(210, 100%, calc(12% * var(--tor-bg-lightness, 1)), var(--tor-bg-opacity, 1));
+  --tor-bg-maroon: hsla(331, 74%, calc(30% * var(--tor-bg-lightness, 1)), var(--tor-bg-opacity, 1));
+  --tor-bg-brown: hsla(28, 28%, calc(39% * var(--tor-bg-lightness, 1)), var(--tor-bg-opacity, 1));
+  --tor-bg-magenta: hsla(314, 88%, calc(51% * var(--tor-bg-lightness, 1)), var(--tor-bg-opacity, 1));
+  --tor-bg-lime: hsla(146, 100%, calc(50% * var(--tor-bg-lightness, 1)), var(--tor-bg-opacity, 1));
+  --tor-bg-black: hsla(0, 0%, calc(0% * var(--tor-bg-lightness, 1)), var(--tor-bg-opacity, 1));
+  --tor-bg-primary: hsla(230, 100%, calc(56% * var(--tor-bg-lightness, 1)), var(--tor-bg-opacity, 1));
+  --tor-bg-secondary: hsla(208, 7%, calc(46% * var(--tor-bg-lightness, 1)), var(--tor-bg-opacity, 1));
+  --tor-bg-success: hsla(152, 69%, calc(31% * var(--tor-bg-lightness, 1)), var(--tor-bg-opacity, 1));
+  --tor-bg-info: hsla(190, 90%, calc(50% * var(--tor-bg-lightness, 1)), var(--tor-bg-opacity, 1));
+  --tor-bg-warning: hsla(45, 100%, calc(51% * var(--tor-bg-lightness, 1)), var(--tor-bg-opacity, 1));
+  --tor-bg-danger: hsla(354, 70%, calc(54% * var(--tor-bg-lightness, 1)), var(--tor-bg-opacity, 1));
+  --tor-bg-light: hsla(210, 17%, calc(98% * var(--tor-bg-lightness, 1)), var(--tor-bg-opacity, 1));
+  --tor-bg-dark: hsla(210, 10%, calc(23% * var(--tor-bg-lightness, 1)), var(--tor-bg-opacity, 1));
+  --tor-bg-transparent: transparent;
+}
+
+[data-tor*="bg-lighten("] {
+  --tor-bg-lighten-xs: 1.1;
+  --tor-bg-lighten-sm: 1.2;
+  --tor-bg-lighten-md: 1.3;
+  --tor-bg-lighten-lg: 1.4;
+  --tor-bg-lighten-xl: 1.5;
+}
+
+[data-tor*="bg-darken("] {
+  --tor-bg-darken-xs: 0.9;
+  --tor-bg-darken-sm: 0.8;
+  --tor-bg-darken-md: 0.7;
+  --tor-bg-darken-lg: 0.6;
+  --tor-bg-darken-xl: 0.5;
+}
+
+[data-tor*="block("] {
+  --tor-block: inset(0% 0% 0% 0%);
+  --tor-block-scale: var(--tor-block-scale-idle);
+  --tor-clip-delay: var(--tor-delay-all, 0ms);
+  --tor-block-delay: calc(var(--tor-duration-all) + var(--tor-delay-all, 0ms));
+  -webkit-clip-path: var(--tor-block);
+          clip-path: var(--tor-block);
+  contain: paint;
+  transform-style: preserve-3d;
+  will-change: clip-path, transform;
+  position: relative;
+  transition-delay: var(--tor-clip-delay) !important;
+  visibility: visible;
+}
+
+@-moz-document url-prefix() {
+  [data-tor*="block("] {
+    filter: drop-shadow(0 0 0 transparent);
+  }
+}
+
+[data-tor*="block("]:before {
+  background-color: var(--tor-block-bg, #000);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transform: var(--tor-block-scale);
+  transition-delay: var(--tor-block-delay);
+  transition-duration: var(--tor-duration-all);
+  transition-timing-function: inherit;
+  transform-origin: var(--tor-block-origin);
+  transition-property: transform;
+  z-index: 1;
+}
+
+[data-tor*=":block(right"],
+[data-tor*=":block(left"] {
+  --tor-block-scale: scaleX(0);
+  --tor-block-scale-idle: scaleX(1);
+}
+
+[data-tor*=":block(up"],
+[data-tor*=":block(down"] {
+  --tor-block-scale: scaleY(0);
+  --tor-block-scale-idle: scaleY(1);
+}
+
+[data-tor*=":block(right"] {
+  --tor-block-origin: right;
+  --tor-block-idle: inset(0% 100% 0% 0%);
+}
+
+[data-tor*=":block(left"] {
+  --tor-block-origin: left;
+  --tor-block-idle: inset(0% 0% 0% 100%);
+}
+
+[data-tor*=":block(up"] {
+  --tor-block-origin: top;
+  --tor-block-idle: inset(100% 0% 0% 0%);
+}
+
+[data-tor*=":block(down"] {
+  --tor-block-origin: bottom;
+  --tor-block-idle: inset(0% 0% 100% 0%);
+}
+
+[data-tor*="blur("],
+[data-tor*="blur."] {
+  filter: blur(var(--tor-blur, 0));
+  --tor-blur-no: 0rem;
+  --tor-blur-xs: 0.25rem;
+  --tor-blur-sm: 0.5rem;
+  --tor-blur-md: 1rem;
+  --tor-blur-lg: 2rem;
+  --tor-blur-xl: 4rem;
+}
+
+[data-tor*="border("] {
+  --tor-border-blue: hsla(230, 100%, 56%, var(--tor-border-opacity, 1));
+  --tor-border-indigo: hsla(263, 90%, 51%, var(--tor-border-opacity, 1));
+  --tor-border-purple: hsla(261, 51%, 51%, var(--tor-border-opacity, 1));
+  --tor-border-pink: hsla(330, 67%, 52%, var(--tor-border-opacity, 1));
+  --tor-border-red: hsla(354, 70%, 54%, var(--tor-border-opacity, 1));
+  --tor-border-orange: hsla(27, 98%, 54%, var(--tor-border-opacity, 1));
+  --tor-border-yellow: hsla(45, 100%, 51%, var(--tor-border-opacity, 1));
+  --tor-border-green: hsla(152, 69%, 31%, var(--tor-border-opacity, 1));
+  --tor-border-teal: hsla(162, 73%, 46%, var(--tor-border-opacity, 1));
+  --tor-border-cyan: hsla(190, 90%, 50%, var(--tor-border-opacity, 1));
+  --tor-border-white: hsla(0, 0%, 100%, var(--tor-border-opacity, 1));
+  --tor-border-gray: hsla(210, 14%, 83%, var(--tor-border-opacity, 1));
+  --tor-border-gray-dark: hsla(210, 10%, 23%, var(--tor-border-opacity, 1));
+  --tor-border-navy: hsla(210, 100%, 12%, var(--tor-border-opacity, 1));
+  --tor-border-maroon: hsla(331, 74%, 30%, var(--tor-border-opacity, 1));
+  --tor-border-brown: hsla(28, 28%, 39%, var(--tor-border-opacity, 1));
+  --tor-border-magenta: hsla(314, 88%, 51%, var(--tor-border-opacity, 1));
+  --tor-border-lime: hsla(146, 100%, 50%, var(--tor-border-opacity, 1));
+  --tor-border-black: hsla(0, 0%, 0%, var(--tor-border-opacity, 1));
+  --tor-border-primary: hsla(230, 100%, 56%, var(--tor-border-opacity, 1));
+  --tor-border-secondary: hsla(208, 7%, 46%, var(--tor-border-opacity, 1));
+  --tor-border-success: hsla(152, 69%, 31%, var(--tor-border-opacity, 1));
+  --tor-border-info: hsla(190, 90%, 50%, var(--tor-border-opacity, 1));
+  --tor-border-warning: hsla(45, 100%, 51%, var(--tor-border-opacity, 1));
+  --tor-border-danger: hsla(354, 70%, 54%, var(--tor-border-opacity, 1));
+  --tor-border-light: hsla(210, 17%, 98%, var(--tor-border-opacity, 1));
+  --tor-border-dark: hsla(210, 10%, 23%, var(--tor-border-opacity, 1));
+  --tor-border-transparent: transparent;
+  --tor-border-opacity: 1;
+}
+
+[data-tor*="opacity"],
+[data-tor*="fade."] {
+  opacity: var(--tor-opacity);
+}
+
+[data-tor*=":mask("] {
+  -webkit-clip-path: polygon(var(--tor-mask));
+          clip-path: polygon(var(--tor-mask));
+  contain: paint;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  will-change: clip-path;
+}
+
+@-moz-document url-prefix() {
+  [data-tor*=":mask("] {
+    filter: drop-shadow(0 0 0 transparent);
+  }
+}
+
+[data-tor*=":mask(circle"] {
+  -webkit-clip-path: circle(var(--tor-mask));
+          clip-path: circle(var(--tor-mask));
+}
+
+[data-tor*=":mask("] {
+  --tor-mask-skew: 0rem;
+  --tor-mask-left: calc(0% - var(--tor-mask-skew)) 0%, 100% 0%, 100% 100%, 0% 100%;
+  --tor-mask-right: 0% 0%, calc(100% + var(--tor-mask-skew)) 0%, 100% 100%, 0% 100%;
+  --tor-mask-up: 0% 0%, 100% calc(0% - var(--tor-mask-skew)), 100% 100%, 0% 100%;
+  --tor-mask-down: 0% 0%, 100% 0%, 100% calc(100% + var(--tor-mask-skew)), 0% 100%;
+  --tor-mask-circle: 100%;
+}
+
+[data-tor*=":mask(left"] {
+  --tor-mask-a: var(--tor-mask-left);
+  --tor-mask: 100% 0%, 100% 0%, 100% 100%, calc(100% + var(--tor-mask-skew)) 100%;
+}
+
+[data-tor*=":mask(right"] {
+  --tor-mask-a: var(--tor-mask-right);
+  --tor-mask: 0% 0%, 0% 0%, calc(0% - var(--tor-mask-skew)) 100%, 0% 100%;
+}
+
+[data-tor*=":mask(up"] {
+  --tor-mask-a: var(--tor-mask-up);
+  --tor-mask: 0% calc(100% + var(--tor-mask-skew)), 100% 100%, 100% 100%, 0% 100%;
+}
+
+[data-tor*=":mask(down"] {
+  --tor-mask-a: var(--tor-mask-down);
+  --tor-mask: 0% 0%, 100% 0%, 100% 0%, 0% calc(0% - var(--tor-mask-skew));
+}
+
+[data-tor*=":mask(circle"] {
+  --tor-mask-a: var(--tor-mask-circle);
+  --tor-mask: 0%;
+}
+
+[data-tor*="push."],
+[data-tor*="pull."] {
+  --tor-push-pull-xs: 0.25rem;
+  --tor-push-pull-sm: 1rem;
+  --tor-push-pull-md: 2rem;
+  --tor-push-pull-lg: 5rem;
+  --tor-push-pull-xl: 8rem;
+  --tor-push-pull-full: 100%;
+  --tor-push-pull-half: 50%;
+}
+
+[data-tor*=":reveal.hide("],
+[data-tor*=":reveal("] {
+  -webkit-clip-path: var(--tor-reveal);
+          clip-path: var(--tor-reveal);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  transform-style: preserve-3d;
+  contain: paint;
+  will-change: transform;
+  transition-delay: calc(var(--tor-delay) + 100ms);
+}
+
+span[data-tor*=":reveal("] {
+  display: inline-block;
+}
+
+[data-tor*=":reveal("] {
+  --tor-reveal: inset(0% 0% 0% 0%);
+  --tor-translateY: 0%;
+  --tor-translateX: 0%;
+}
+
+[data-tor*=":reveal.hide("] {
+  --tor-reveal: inset(0% 0% 0% 0%);
+  --tor-translateY: 0%;
+  --tor-translateX: 0%;
+}
+
+[data-tor*=":reveal(up"] {
+  --tor-reveal-idle: inset(0% 0% 99.999% 0%);
+  --tor-translateY-idle: 100%;
+}
+
+[data-tor*=":reveal(down"] {
+  --tor-reveal-idle: inset(99.999% 0% 0% 0%);
+  --tor-translateY-idle: -100%;
+}
+
+[data-tor*=":reveal(right"] {
+  --tor-reveal-idle: inset(0% 0% 0% 99.999%);
+  --tor-translateX-idle: -100%;
+}
+
+[data-tor*=":reveal(left"] {
+  --tor-reveal-idle: inset(0% 99.999% 0% 0%);
+  --tor-translateX-idle: 100%;
+}
+
+[data-tor*=":reveal.hide(down"] {
+  --tor-reveal-idle: inset(0% 0% 100% 0%);
+  --tor-translateY-idle: 100%;
+}
+
+[data-tor*=":reveal.hide(up"] {
+  --tor-reveal-idle: inset(100% 0% 0% 0%);
+  --tor-translateY-idle: -100%;
+}
+
+[data-tor*=":reveal.hide(left"] {
+  --tor-reveal-idle: inset(0% 0% 0% 100%);
+  --tor-translateX-idle: -100%;
+}
+
+[data-tor*=":reveal.hide(right"] {
+  --tor-reveal-idle: inset(0% 100% 0% 0%);
+  --tor-translateX-idle: 100%;
+}
+
+[data-tor*="shadow("] {
+  --tor-shadow-inset: var(--tor-none, /*!*/);
+  --tor-shadow-color: 0, 0, 0;
+  --tor-shadow-offsetX: 0rem;
+  --tor-shadow-offsetY: 0rem;
+  --tor-shadow-intensity: 1;
+}
+
+[data-tor*="shadow("] {
+  --tor-shadow-md: var(--tor-shadow-inset) var(--tor-shadow-offsetX, 0rem) calc(0.25rem + var(--tor-shadow-offsetY, 0rem)) 0.625rem rgba(var(--tor-shadow-color), calc(0.15 * var(--tor-shadow-intensity)));
+  --tor-shadow-xs: var(--tor-shadow-inset) var(--tor-shadow-offsetX, 0rem) calc(0.125rem + var(--tor-shadow-offsetY, 0rem)) 0.1875rem rgba(var(--tor-shadow-color), calc(0.1 * var(--tor-shadow-intensity)));
+  --tor-shadow-sm: var(--tor-shadow-inset) var(--tor-shadow-offsetX, 0rem) calc(0.125rem + var(--tor-shadow-offsetY, 0rem)) 0.375rem rgba(var(--tor-shadow-color), calc(0.15 * var(--tor-shadow-intensity)));
+  --tor-shadow-lg: var(--tor-shadow-inset) var(--tor-shadow-offsetX, 0rem) calc(0.25rem + var(--tor-shadow-offsetY, 0rem)) 1.5rem rgba(var(--tor-shadow-color), calc(0.25 * var(--tor-shadow-intensity)));
+  --tor-shadow-xl: var(--tor-shadow-inset) var(--tor-shadow-offsetX, 0rem) calc(0.75rem + var(--tor-shadow-offsetY, 0rem)) 2rem rgba(var(--tor-shadow-color), calc(0.25 * var(--tor-shadow-intensity)));
+  --tor-shadow-pop: var(--tor-shadow-inset) var(--tor-shadow-offsetX, 0rem) calc(1.5rem + var(--tor-shadow-offsetY, 0rem)) 5.5rem rgba(var(--tor-shadow-color), calc(0.5 * var(--tor-shadow-intensity)));
+  --tor-shadow-risen: var(--tor-shadow-inset) var(--tor-shadow-offsetX, 0rem) calc(1.5rem + var(--tor-shadow-offsetY, 0rem)) 1rem -1rem rgba(var(--tor-shadow-color), calc(0.3 * var(--tor-shadow-intensity)));
+  --tor-shadow-no: none;
+}
+
+[data-tor*="shadow-offset"] {
+  --tor-shadow-offset-xs: 0.25rem;
+  --tor-shadow-offset-sm: 1rem;
+  --tor-shadow-offset-md: 2rem;
+  --tor-shadow-offset-lg: 5rem;
+  --tor-shadow-offset-xl: 8rem;
+}
+
+[data-tor*="shadow-intensity("] {
+  --tor-shadow-intensity-xs: 0.25;
+  --tor-shadow-intensity-sm: 0.5;
+  --tor-shadow-intensity-md: 1;
+  --tor-shadow-intensity-lg: 2;
+  --tor-shadow-intensity-xl: 3;
+}
+
+[data-tor*="text("] {
+  --tor-text-blue: hsla(230, 100%, calc(56% * var(--tor-text-lightness, 1)), var(--tor-text-opacity, 1));
+  --tor-text-indigo: hsla(263, 90%, calc(51% * var(--tor-text-lightness, 1)), var(--tor-text-opacity, 1));
+  --tor-text-purple: hsla(261, 51%, calc(51% * var(--tor-text-lightness, 1)), var(--tor-text-opacity, 1));
+  --tor-text-pink: hsla(330, 67%, calc(52% * var(--tor-text-lightness, 1)), var(--tor-text-opacity, 1));
+  --tor-text-red: hsla(354, 70%, calc(54% * var(--tor-text-lightness, 1)), var(--tor-text-opacity, 1));
+  --tor-text-orange: hsla(27, 98%, calc(54% * var(--tor-text-lightness, 1)), var(--tor-text-opacity, 1));
+  --tor-text-yellow: hsla(45, 100%, calc(51% * var(--tor-text-lightness, 1)), var(--tor-text-opacity, 1));
+  --tor-text-green: hsla(152, 69%, calc(31% * var(--tor-text-lightness, 1)), var(--tor-text-opacity, 1));
+  --tor-text-teal: hsla(162, 73%, calc(46% * var(--tor-text-lightness, 1)), var(--tor-text-opacity, 1));
+  --tor-text-cyan: hsla(190, 90%, calc(50% * var(--tor-text-lightness, 1)), var(--tor-text-opacity, 1));
+  --tor-text-white: hsla(0, 0%, calc(100% * var(--tor-text-lightness, 1)), var(--tor-text-opacity, 1));
+  --tor-text-gray: hsla(210, 14%, calc(83% * var(--tor-text-lightness, 1)), var(--tor-text-opacity, 1));
+  --tor-text-gray-dark: hsla(210, 10%, calc(23% * var(--tor-text-lightness, 1)), var(--tor-text-opacity, 1));
+  --tor-text-navy: hsla(210, 100%, calc(12% * var(--tor-text-lightness, 1)), var(--tor-text-opacity, 1));
+  --tor-text-maroon: hsla(331, 74%, calc(30% * var(--tor-text-lightness, 1)), var(--tor-text-opacity, 1));
+  --tor-text-brown: hsla(28, 28%, calc(39% * var(--tor-text-lightness, 1)), var(--tor-text-opacity, 1));
+  --tor-text-magenta: hsla(314, 88%, calc(51% * var(--tor-text-lightness, 1)), var(--tor-text-opacity, 1));
+  --tor-text-lime: hsla(146, 100%, calc(50% * var(--tor-text-lightness, 1)), var(--tor-text-opacity, 1));
+  --tor-text-black: hsla(0, 0%, calc(0% * var(--tor-text-lightness, 1)), var(--tor-text-opacity, 1));
+  --tor-text-primary: hsla(230, 100%, calc(56% * var(--tor-text-lightness, 1)), var(--tor-text-opacity, 1));
+  --tor-text-secondary: hsla(208, 7%, calc(46% * var(--tor-text-lightness, 1)), var(--tor-text-opacity, 1));
+  --tor-text-success: hsla(152, 69%, calc(31% * var(--tor-text-lightness, 1)), var(--tor-text-opacity, 1));
+  --tor-text-info: hsla(190, 90%, calc(50% * var(--tor-text-lightness, 1)), var(--tor-text-opacity, 1));
+  --tor-text-warning: hsla(45, 100%, calc(51% * var(--tor-text-lightness, 1)), var(--tor-text-opacity, 1));
+  --tor-text-danger: hsla(354, 70%, calc(54% * var(--tor-text-lightness, 1)), var(--tor-text-opacity, 1));
+  --tor-text-light: hsla(210, 17%, calc(98% * var(--tor-text-lightness, 1)), var(--tor-text-opacity, 1));
+  --tor-text-dark: hsla(210, 10%, calc(23% * var(--tor-text-lightness, 1)), var(--tor-text-opacity, 1));
+  --tor-text-transparent: transparent;
+}
+
+[data-tor*="rotateY."],
+[data-tor*="rotateX."] {
+  --tor-perspective-self: 1000px;
+  transform-style: preserve-3d;
+}
+
+[data-tor*="loop:"],
+[data-tor-loop] {
+  --tor-loop-duration: 1000ms;
+  --tor-loop-timing: ease-in-out;
+  --tor-loop-direction: normal;
+  --tor-loop-speed: 1;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+@-moz-document url-prefix() {
+  [data-tor*="loop:"],
+  [data-tor-loop] {
+    rotate: 0.02deg;
+    outline: 1px solid transparent;
+  }
+}
+
+[data-tor*=":move"] {
+  position: absolute;
+}
+
+[data-tor*="loop:bg"],
+[data-tor*="loop:sm::bg"],
+[data-tor*="loop:md::bg"],
+[data-tor*="loop:lg::bg"],
+[data-tor*="loop:xl::bg"],
+[data-tor*="loop:xxl::bg"] {
+  --tor-loop-bg-start: var(--tor-loop-bg-value-start, #1f44ff);
+  --tor-loop-bg-end: var(--tor-loop-bg-value, #6c757d);
+}
+
+[data-tor*=":fill"] {
+  --tor-loop-fill-start: var(--tor-loop-fill-value-start, #1f44ff);
+  --tor-loop-fill-end: var(--tor-loop-fill-value, #6c757d);
+}
+
+@-webkit-keyframes loop-blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: var(--tor-loop-blink-value);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes loop-blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: var(--tor-loop-blink-value);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes loop-circle {
+  0% {
+    transform: rotate(0deg) translateX(var(--tor-loop-circle-value)) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(var(--tor-loop-circle-value)) rotate(-360deg);
+  }
+}
+
+@keyframes loop-circle {
+  0% {
+    transform: rotate(0deg) translateX(var(--tor-loop-circle-value)) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(var(--tor-loop-circle-value)) rotate(-360deg);
+  }
+}
+
+@-webkit-keyframes loop-float {
+  0% {
+    transform: translateY(0rem);
+  }
+  100% {
+    transform: translateY(var(--tor-loop-float-value));
+  }
+}
+
+@keyframes loop-float {
+  0% {
+    transform: translateY(0rem);
+  }
+  100% {
+    transform: translateY(var(--tor-loop-float-value));
+  }
+}
+
+@-webkit-keyframes loop-jump {
+  0% {
+    transform: translateY(0rem);
+  }
+  50% {
+    transform: translateY(calc(var(--tor-loop-jump-value) * -1));
+  }
+  65% {
+    transform: translateY(0rem);
+  }
+  70% {
+    transform: translateY(calc( var(--tor-loop-jump-value)  * -0.2));
+  }
+  90% {
+    transform: translateY(0rem);
+  }
+  100% {
+    transform: translateY(0rem);
+  }
+}
+
+@keyframes loop-jump {
+  0% {
+    transform: translateY(0rem);
+  }
+  50% {
+    transform: translateY(calc(var(--tor-loop-jump-value) * -1));
+  }
+  65% {
+    transform: translateY(0rem);
+  }
+  70% {
+    transform: translateY(calc( var(--tor-loop-jump-value)  * -0.2));
+  }
+  90% {
+    transform: translateY(0rem);
+  }
+  100% {
+    transform: translateY(0rem);
+  }
+}
+
+@-webkit-keyframes loop-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(var(--tor-loop-pulse-value));
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes loop-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(var(--tor-loop-pulse-value));
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes loop-radiate {
+  0% {
+    box-shadow: 0 0 0 0rem var(--tor-loop-color-0);
+  }
+  100% {
+    box-shadow: 0 0 0 var(--tor-loop-radiate-value) var(--tor-loop-color-100);
+  }
+}
+
+@keyframes loop-radiate {
+  0% {
+    box-shadow: 0 0 0 0rem var(--tor-loop-color-0);
+  }
+  100% {
+    box-shadow: 0 0 0 var(--tor-loop-radiate-value) var(--tor-loop-color-100);
+  }
+}
+
+@-webkit-keyframes loop-spin {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(var(--tor-loop-spin-value));
+  }
+}
+
+@keyframes loop-spin {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(var(--tor-loop-spin-value));
+  }
+}
+
+@-webkit-keyframes loop-swing {
+  0% {
+    transform: rotateZ(var(--tor-loop-swing-value));
+  }
+  50% {
+    transform: rotateZ(calc( var(--tor-loop-swing-value) * (-1)));
+  }
+  100% {
+    transform: rotateZ(var(--tor-loop-swing-value));
+  }
+}
+
+@keyframes loop-swing {
+  0% {
+    transform: rotateZ(var(--tor-loop-swing-value));
+  }
+  50% {
+    transform: rotateZ(calc( var(--tor-loop-swing-value) * (-1)));
+  }
+  100% {
+    transform: rotateZ(var(--tor-loop-swing-value));
+  }
+}
+
+@-webkit-keyframes loop-wobble-h {
+  0% {
+    transform: translateX(calc( var(--tor-loop-wobble-h-value) * 0.5));
+  }
+  100% {
+    transform: translateX(calc( var(--tor-loop-wobble-h-value) * -0.5));
+  }
+}
+
+@keyframes loop-wobble-h {
+  0% {
+    transform: translateX(calc( var(--tor-loop-wobble-h-value) * 0.5));
+  }
+  100% {
+    transform: translateX(calc( var(--tor-loop-wobble-h-value) * -0.5));
+  }
+}
+
+@-webkit-keyframes loop-wobble-v {
+  0% {
+    transform: translateY(calc( var(--tor-loop-wobble-v-value) * 0.5));
+  }
+  100% {
+    transform: translateY(calc( var(--tor-loop-wobble-v-value) * -0.5));
+  }
+}
+
+@keyframes loop-wobble-v {
+  0% {
+    transform: translateY(calc( var(--tor-loop-wobble-v-value) * 0.5));
+  }
+  100% {
+    transform: translateY(calc( var(--tor-loop-wobble-v-value) * -0.5));
+  }
+}
+
+@-webkit-keyframes loop-move-right {
+  0% {
+    left: 0%;
+    transform: translateX(-100%);
+  }
+  99% {
+    visibility: hidden;
+    left: 100%;
+    transform: translateX(0%);
+  }
+  100% {
+    visibility: hidden;
+    left: 100%;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes loop-move-right {
+  0% {
+    left: 0%;
+    transform: translateX(-100%);
+  }
+  99% {
+    visibility: hidden;
+    left: 100%;
+    transform: translateX(0%);
+  }
+  100% {
+    visibility: hidden;
+    left: 100%;
+    transform: translateX(0%);
+  }
+}
+
+@-webkit-keyframes loop-move-left {
+  0% {
+    right: 0%;
+    transform: translateX(100%);
+  }
+  99% {
+    visibility: hidden;
+    right: 100%;
+    transform: translateX(0%);
+  }
+  100% {
+    visibility: hidden;
+    right: 100%;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes loop-move-left {
+  0% {
+    right: 0%;
+    transform: translateX(100%);
+  }
+  99% {
+    visibility: hidden;
+    right: 100%;
+    transform: translateX(0%);
+  }
+  100% {
+    visibility: hidden;
+    right: 100%;
+    transform: translateX(0%);
+  }
+}
+
+@-webkit-keyframes loop-move-down {
+  0% {
+    top: 0%;
+    transform: translateY(-100%);
+  }
+  99% {
+    visibility: hidden;
+    top: 100%;
+    transform: translateY(0%);
+  }
+  100% {
+    visibility: hidden;
+    top: 0%;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes loop-move-down {
+  0% {
+    top: 0%;
+    transform: translateY(-100%);
+  }
+  99% {
+    visibility: hidden;
+    top: 100%;
+    transform: translateY(0%);
+  }
+  100% {
+    visibility: hidden;
+    top: 0%;
+    transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes loop-move-up {
+  0% {
+    bottom: 0%;
+    transform: translateY(100%);
+  }
+  99% {
+    visibility: hidden;
+    bottom: 100%;
+    transform: translateY(0%);
+  }
+  100% {
+    visibility: hidden;
+    bottom: 100%;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes loop-move-up {
+  0% {
+    bottom: 0%;
+    transform: translateY(100%);
+  }
+  99% {
+    visibility: hidden;
+    bottom: 100%;
+    transform: translateY(0%);
+  }
+  100% {
+    visibility: hidden;
+    bottom: 100%;
+    transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes loop-glow {
+  0% {
+    filter: drop-shadow(0rem 0rem 0rem var(--tor-loop-glow-color, #1f44ff));
+  }
+  50% {
+    filter: drop-shadow(0rem 0rem var(--tor-loop-glow-value) var(--tor-loop-glow-color, #1f44ff));
+  }
+  100% {
+    filter: drop-shadow(0rem 0rem 0rem var(--tor-loop-glow-color, #1f44ff));
+  }
+}
+
+@keyframes loop-glow {
+  0% {
+    filter: drop-shadow(0rem 0rem 0rem var(--tor-loop-glow-color, #1f44ff));
+  }
+  50% {
+    filter: drop-shadow(0rem 0rem var(--tor-loop-glow-value) var(--tor-loop-glow-color, #1f44ff));
+  }
+  100% {
+    filter: drop-shadow(0rem 0rem 0rem var(--tor-loop-glow-color, #1f44ff));
+  }
+}
+
+@-webkit-keyframes loop-bg {
+  0% {
+    background-color: var(--tor-loop-bg-start);
+  }
+  100% {
+    background-color: var(--tor-loop-bg-end);
+  }
+}
+
+@keyframes loop-bg {
+  0% {
+    background-color: var(--tor-loop-bg-start);
+  }
+  100% {
+    background-color: var(--tor-loop-bg-end);
+  }
+}
+
+@-webkit-keyframes loop-fill {
+  0% {
+    fill: var(--tor-loop-fill-start);
+  }
+  100% {
+    fill: var(--tor-loop-fill-end);
+  }
+}
+
+@keyframes loop-fill {
+  0% {
+    fill: var(--tor-loop-fill-start);
+  }
+  100% {
+    fill: var(--tor-loop-fill-end);
+  }
+}
+
+[data-tor*="loop:blink"] {
+  --tor-loop-blink-value: 0;
+  --tor-loop-blink-duration: var(--tor-loop-duration);
+  --tor-loop-blink-direction: var(--tor-loop-direction);
+  --tor-loop-blink-timing: var(--tor-loop-timing);
+}
+
+[data-tor*="loop:bg"] {
+  --tor-loop-bg-value: #6c757d;
+  --tor-loop-bg-duration: 2s;
+  --tor-loop-bg-direction: alternate;
+  --tor-loop-bg-timing: linear;
+}
+
+[data-tor*="loop:fill"] {
+  --tor-loop-fill-value: #6c757d;
+  --tor-loop-fill-duration: 2s;
+  --tor-loop-fill-direction: alternate;
+  --tor-loop-fill-timing: linear;
+}
+
+[data-tor*="loop:jump"] {
+  --tor-loop-jump-value: 0.5rem;
+  --tor-loop-jump-duration: 1500ms;
+  --tor-loop-jump-direction: var(--tor-loop-direction);
+  --tor-loop-jump-timing: cubic-bezier(0.4, 0, 0.4, 1.5);
+}
+
+[data-tor*="loop:circle"] {
+  --tor-loop-circle-value: 1rem;
+  --tor-loop-circle-duration: 2000ms;
+  --tor-loop-circle-direction: var(--tor-loop-direction);
+  --tor-loop-circle-timing: linear;
+}
+
+[data-tor*="loop:float"] {
+  --tor-loop-float-value: -0.5rem;
+  --tor-loop-float-duration: var(--tor-loop-duration);
+  --tor-loop-float-direction: alternate;
+  --tor-loop-float-timing: var(--tor-loop-timing);
+}
+
+[data-tor*="loop:glow"] {
+  --tor-loop-glow-value: 0.5rem;
+  --tor-loop-glow-duration: 2s;
+  --tor-loop-glow-direction: var(--tor-loop-direction);
+  --tor-loop-glow-timing: var(--tor-loop-timing);
+}
+
+[data-tor*="loop:pulse"] {
+  --tor-loop-pulse-value: 1.1;
+  --tor-loop-pulse-duration: var(--tor-loop-duration);
+  --tor-loop-pulse-direction: var(--tor-loop-direction);
+  --tor-loop-pulse-timing: var(--tor-loop-timing);
+}
+
+[data-tor*="loop:spin"] {
+  --tor-loop-spin-value: 360deg;
+  --tor-loop-spin-duration: 2000ms;
+  --tor-loop-spin-direction: var(--tor-loop-direction);
+  --tor-loop-spin-timing: linear;
+}
+
+[data-tor*="loop:swing"] {
+  --tor-loop-swing-value: 20deg;
+  --tor-loop-swing-duration: 500ms;
+  --tor-loop-swing-direction: var(--tor-loop-direction);
+  --tor-loop-swing-timing: var(--tor-loop-timing);
+}
+
+[data-tor*="loop:radiate"] {
+  --tor-loop-radiate-value: 0.75rem;
+  --tor-loop-radiate-duration: var(--tor-loop-duration);
+  --tor-loop-radiate-direction: var(--tor-loop-direction);
+  --tor-loop-radiate-timing: var(--tor-loop-timing);
+}
+
+[data-tor*="loop:wobble.v"] {
+  --tor-loop-wobble-v-value: 1rem;
+  --tor-loop-wobble-v-duration: 800ms;
+  --tor-loop-wobble-v-direction: alternate;
+  --tor-loop-wobble-v-timing: var(--tor-loop-timing);
+}
+
+[data-tor*="loop:wobble.h"] {
+  --tor-loop-wobble-h-value: 1rem;
+  --tor-loop-wobble-h-duration: 800ms;
+  --tor-loop-wobble-h-direction: alternate;
+  --tor-loop-wobble-h-timing: var(--tor-loop-timing);
+}
+
+[data-tor*="loop:move.right"] {
+  --tor-loop-move-right-value: ;
+  --tor-loop-move-right-duration: 2000ms;
+  --tor-loop-move-right-direction: var(--tor-loop-direction);
+  --tor-loop-move-right-timing: linear;
+}
+
+[data-tor*="loop:move.left"] {
+  --tor-loop-move-left-value: ;
+  --tor-loop-move-left-duration: 2000ms;
+  --tor-loop-move-left-direction: var(--tor-loop-direction);
+  --tor-loop-move-left-timing: linear;
+}
+
+[data-tor*="loop:move.up"] {
+  --tor-loop-move-up-value: ;
+  --tor-loop-move-up-duration: 2000ms;
+  --tor-loop-move-up-direction: var(--tor-loop-direction);
+  --tor-loop-move-up-timing: linear;
+}
+
+[data-tor*="loop:move.down"] {
+  --tor-loop-move-down-value: ;
+  --tor-loop-move-down-duration: 2000ms;
+  --tor-loop-move-down-direction: var(--tor-loop-direction);
+  --tor-loop-move-down-timing: linear;
+}
+
+[data-tor*=":radiate(primary"] {
+  --tor-loop-color-0: rgba(31, 68, 255, 0.8);
+  --tor-loop-color-100: rgba(31, 68, 255, 0);
+}
+
+[data-tor*=":radiate(secondary"] {
+  --tor-loop-color-0: rgba(108, 117, 125, 0.8);
+  --tor-loop-color-100: rgba(108, 117, 125, 0);
+}
+
+[data-tor*=":radiate(success"] {
+  --tor-loop-color-0: rgba(25, 135, 84, 0.8);
+  --tor-loop-color-100: rgba(25, 135, 84, 0);
+}
+
+[data-tor*=":radiate(info"] {
+  --tor-loop-color-0: rgba(13, 202, 240, 0.8);
+  --tor-loop-color-100: rgba(13, 202, 240, 0);
+}
+
+[data-tor*=":radiate(warning"] {
+  --tor-loop-color-0: rgba(255, 193, 7, 0.8);
+  --tor-loop-color-100: rgba(255, 193, 7, 0);
+}
+
+[data-tor*=":radiate(danger"] {
+  --tor-loop-color-0: rgba(220, 53, 69, 0.8);
+  --tor-loop-color-100: rgba(220, 53, 69, 0);
+}
+
+[data-tor*=":radiate(light"] {
+  --tor-loop-color-0: rgba(248, 249, 250, 0.8);
+  --tor-loop-color-100: rgba(248, 249, 250, 0);
+}
+
+[data-tor*=":radiate(dark"] {
+  --tor-loop-color-0: rgba(52, 58, 64, 0.8);
+  --tor-loop-color-100: rgba(52, 58, 64, 0);
+}
+
+[data-tor*=":radiate(gray"] {
+  --tor-loop-color-0: rgba(206, 212, 218, 0.8);
+  --tor-loop-color-100: rgba(206, 212, 218, 0);
+}
+
+[data-tor~="quad"] {
+  --tor-loop-timing: cubic-bezier(0.23, 0, 0, 1) !important;
+}
+
+[data-tor~="exponential"] {
+  --tor-loop-timing: cubic-bezier(0.9, 0, 0.1, 1) !important;
+}
+
+[data-tor~="bounce"] {
+  --tor-loop-timing: cubic-bezier(0.4, 0, 0, 1.4) !important;
+}
+
+/*# sourceMappingURL=toruskit.css.map */
